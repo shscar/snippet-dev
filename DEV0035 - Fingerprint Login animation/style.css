@@ -13,6 +13,7 @@ body {
     background: #111;
 }
 
+/*  */
 .card {
     background: #222;
     padding: 40px;
@@ -21,25 +22,25 @@ body {
     box-shadow: 0 0 20px #3fefef;
     color: #fff;
     width: 350px;
-}
 
-.card h2 {
-    margin-bottom: 20px;
-}
+    /* h2 {
+        margin-bottom: 20px;
+    } */
 
-.card button {
-    padding: 10px 30px;
-    font-size: 1em;
-    border: none;
-    border-radius: 8px;
-    background: #3fefef;
-    color: #111;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
+    button {
+        padding: 10px 30px;
+        font-size: 1em;
+        border: none;
+        border-radius: 8px;
+        background: #3fefef;
+        color: #111;
+        cursor: pointer;
+        transition: background 0.3s ease;
 
-.card button:hover {
-    background: #29c5c5;
+        &:hover {
+            background: #29c5c5;
+        }
+    }
 }
 
 .scan {
@@ -90,7 +91,6 @@ body {
 }
 
 @keyframes blinkText {
-
     0%,
     100% {
         opacity: 0;
