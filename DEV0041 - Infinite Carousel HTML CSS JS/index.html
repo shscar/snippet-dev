@@ -3,56 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Infinite Carousel HTML CSS JS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="slider">
-	<div class="slide-track">
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slide">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+	<div class="slider">
+		<div class="slide-track">
+			<div class="slide">
+				<img src="image/dart.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/javascript.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/kotlin.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/go.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/html.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/php.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/java.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/julia.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/python.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/ruby.svg" alt=""/>
+			</div>
+			<div class="slide">
+				<img src="image/swift.svg" alt=""/>
+			</div>
 		</div>
 	</div>
-</div>
+	<script>
+		window.addEventListener("load", () => {
+			const track = document.querySelector(".slide-track");
+			const slides = Array.from(track.children);
+
+			slides.forEach(slide => {
+			const clone = slide.cloneNode(true);
+			track.appendChild(clone);
+			});
+		});
+	</script>
+
 </body>
 </html>
