@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+/*  */
+.card {
+    background: #222;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px #3fefef;
+    color: #fff;
+    width: 350px;
+
+    button {
+        padding: 10px 30px;
+        font-size: 1em;
+        border: none;
+        border-radius: 8px;
+        background: #3fefef;
+        color: #111;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: #29c5c5;
+        }
+    }
+}
+
+.scan {
+    margin-top: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.finger-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.fingerprint {
+    width: 200px;
+    height: 250px;
+    background: url(https://raw.githubusercontent.com/lasithadilshan/fingerprintanimation.github.io/main/fingerPrint_01.png) no-repeat center;
+    background-size: cover;
+    filter: grayscale(100%) brightness(0.6);
+    animation: scanGlow 4s ease-in-out forwards;
+}
+
+@keyframes scanGlow {
+    0% {
+        filter: grayscale(100%) brightness(0.6);
+    }
+
+    50% {
+        filter: grayscale(50%) brightness(1.2) drop-shadow(0 0 20px #3fefef55);
+    }
+
+    100% {
+        filter: grayscale(0%) brightness(1.5) drop-shadow(0 0 30px #3fefef);
+    }
+}
+
+#scanText {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    color: #3fefef;
+    filter: drop-shadow(0 0 20px #3fefef);
+    animation: blinkText 1s steps(1) infinite;
+}
+
+@keyframes blinkText {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+/* Result area (checkmark + Done) */
+.result-area {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.check-icon {
+    font-size: 80px;
+    color: #00ff7f;
+    animation: popIn 0.5s ease-in-out;
+}
+
+.done-text {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #00ff7f;
+    filter: drop-shadow(0 0 20px #00ff7f);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

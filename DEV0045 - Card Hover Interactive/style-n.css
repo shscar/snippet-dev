@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* mengatur tampilan latar belakang halaman dengan warna */
+body {
+    background: #2DAAE1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+/* mengatur warna latar belakang, warna teks saat dihover, dan warna bayangan kotak. */
+.html {
+    --bg-color: #E38C47;
+    --bg-color-light: #ffd5ba;
+    --box-shadow-color: rgba(255, 243, 220, 0.48);
+}
+
+.css {
+    --bg-color: #5490D8;
+    --bg-color-light: #d6e7fb;
+    --box-shadow-color: rgba(220, 233, 255, 0.48);
+}
+
+.javascript {
+    --bg-color: #ffd861;
+    --bg-color-light: #ffeeba;
+    --box-shadow-color: rgba(255, 215, 97, 0.48);
+}
+
+/* mengatur tampilan card dengan lebar dan tinggi. */
+.card {
+    width: 220px;
+    height: 321px;
+    margin: 20px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* box-shadow: 0 14px 26px rgba(0,0,0,0.04); */
+    /* transition: all 0.3s ease-out; */
+    text-decoration: none;
+}
+
+/* efek hover pada card (sedikit terangkat, diperbesar memberikan efek bayangan). */
+.card:hover {
+    /* transform: translateY(-5px) scale(1.005) translateZ(0); */
+    /* box-shadow: 0 24px 36px rgba(0,0,0,0.11), */
+    /* 0 24px 46px var(--box-shadow-color); */
+}
+
+/* efek hover pada card (overlay pada card diperbesar) */
+.card:hover .overlay {
+    transform: scale(4) translateZ(0);
+}
+
+/* efek hover pada card (card akan mengubah warna border dan latar belakang) */
+.card:hover .circle {
+    border-color: var(--bg-color-light);
+    background: var(--bg-color);
+}
+
+/* efek hover pada card (Bagian dalam lingkaran pada kartu akan mengubah warna latar belakang) */
+.card:hover .circle:after {
+    background: var(--bg-color-light);
+}
+
+/*efek hover pada card. Warna teks pada kartu akan berubah */
+.card:hover p {
+    color: #fff;
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 40px;
+}
+
+/* mengatur efek saat kartu sedang aktif (ditekan). card akan kembali ke ukuran semula dan bayangan kotak akan berubah. */
+.card:active {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
+        0 15px 24px var(--box-shadow-color);
+}
+
+/* mengatur tampilan teks pada card */
+.card p {
+    /* font-size: 17px; */
+    color: #4C5656;
+    margin-top: 30px;
+    z-index: 1000;
+    transition: color 0.3s ease-out;
+}
+
+.card .text {
+    /* width: 80%; */
+    margin: 0 auto;
+    /* font-size: 13px; */
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: 0;
+    max-height: 0;
+    font-weight: 200;
+    /* transition: all 0.3s ease; */
+}
+
+/* mengatur tampilan lingkaran pada kartu */
+.circle {
+    width: 131px;
+    height: 131px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* z-index: 1; */
+    /* transition: all 0.3s ease-out; */
+}
+
+/* mengatur tampilan bagian dalam lingkaran pada card */
+.circle:after {
+    content: "";
+    width: 118px;
+    height: 118px;
+    /* display: block; */
+    position: absolute;
+    background: var(--bg-color);
+    border-radius: 50%;
+    /* top: 7px; */
+    /* left: 7px; */
+    /* transition: opacity 0.3s ease-out; */
+}
+
+/* mengatur tampilan gambar di dalam lingkaran pada card */
+.circle img {
+    margin-top: 12px;
+    z-index: 10000;
+    transform: translateZ(0);
+}
+
+/* mengatur tampilan lapisan overlay pada card */
+.overlay {
+    width: 118px;
+    position: absolute;
+    height: 118px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    top: 70px;
+    /* left: 50px; */
+    /* z-index: 0; */
+    transition: transform 0.3s ease-out;
+}

@@ -1,0 +1,97 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+/* 1. Mengatur Layout Dasar dan Posisi Konten Ikon */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-content {
+    margin: 0 10px;
+    position: relative;
+}
+
+/* 2. Memberikan Interaksi Ikon dengan efek transisi saat dihover */
+.icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    color: #4d4d4d;
+    background-color: #ffff;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover .filled {
+    height: 100%;
+}
+
+/* 3. Mengatur Ikon dan Warna tetap terlihat saat diHover */
+a i {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+a:hover {
+    color: white;
+}
+
+/* 4. Menyembunyikan dan Mengatur tooltip agar berada di atas ikon */
+.tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 15px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* 5. Menampilkan Tooltip dan Menentukan Warna Berdasarkan Data */
+.icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+a[data-social="instagram"] .filled, [data-social="instagram"]~.tooltip {
+    background-color: #8a3ab9;
+}
+
+a[data-social="tiktok"] .filled, [data-social="tiktok"]~.tooltip {
+    background-color: #ff0050;
+}
+
+a[data-social="twitter"] .filled, [data-social="twitter"]~.tooltip {
+    background-color: #1DA1F2;
+}

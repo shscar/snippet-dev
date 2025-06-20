@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:semibold,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #33CC33;
+}
+
+.card {
+  background: #2DAAE1;
+  border-radius: 10px;
+  padding: 90px 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mengatur warna teks, ukuran font, tata letak fleksibel kolom, dan bayangan teks. */
+.container {
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  /* text-shadow: 2px 2px 5px #444343; */
+}
+
+/* Menyelaraskan teks ke kanan dengan lebar penuh */
+.right {
+  width: 100%;
+  letter-spacing: 30px;
+  font-size: medium;
+}
+
+/* Menggunakan grid untuk menumpuk elemen span dalam satu kolom. */
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Mengatur gaya teks dengan font besar, tebal, dan menerapkan animasi tumpukan dan glitch */
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 4rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46, .29, 0, 1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 1s alternate-reverse;
+}
+
+/* Menentukan posisi pergeseran untuk elemen ganjil dan genap dalam animasi glitch */
+.stack span:nth-child(odd) {
+  --glitch-translate: 8px;
+}
+
+.stack span:nth-child(even) {
+  --glitch-translate: -8px;
+}
+
+/* Mengatur animasi tumpukan teks dari opasitas 0 hingga 1 dengan transformasi horizontal dan bayangan teks */
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 #E38C47, 2px -3px 0 #5490D8;
+  }
+
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 #E38C47, -2px 3px 0 #5490D8;
+  }
+
+  100% {
+    text-shadow: none;
+  }
+}
+
+/* Mengatur animasi glitch dengan perubahan cepat pada bayangan teks dan posisi untuk menciptakan efek glitch */
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 #E38C47, 2px -3px 0 #5490D8;
+    transform: translate(var(--glitch-translate));
+  }
+
+  2% {
+    text-shadow: 2px -3px 0 #E38C47, -2px 3px 0 #5490D8;
+  }
+
+  4%,
+  100% {
+    text-shadow: none;
+    transform: none;
+  }
+}

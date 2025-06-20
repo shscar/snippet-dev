@@ -1,0 +1,52 @@
+body {
+    background: #33cc33;
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+}
+
+/* step 1 */
+/* .form-box {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+/* step 2 */
+/* form > input {
+    flex: 1 1 10ch;
+    margin: .5rem;
+}
+
+form > input[type="email"] {
+    flex: 3 1 30ch;
+}
+
+input {
+    border: 1px solid #ccc;
+    background: hsl(0 0% 93%);
+    outline-color: #FFCB05;
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    box-shadow: 0 .75rem .5rem -.5rem rgba(61, 57, 53, 0.3);
+} */
+
+/* step 3 */
+/* input[type="submit"] {
+    background: #2DAAE1;
+    color: white;
+    letter-spacing: 2px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.form-box input[type="submit"]:hover {
+    background: #0a9edd;
+} */
